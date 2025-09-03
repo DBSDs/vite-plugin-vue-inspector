@@ -1,5 +1,29 @@
 # vite-plugin-vue-inspector
 
+## 6.0.0
+
+### Major Changes
+
+- trae
+
+## 6.0.0
+
+### Major Changes
+
+- trae
+
+## 7.0.0
+
+### Major Changes
+
+- trae
+
+## 6.0.0
+
+### Major Changes
+
+- trae
+
 ## 5.3.2
 
 ### Patch Changes

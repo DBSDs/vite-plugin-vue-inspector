@@ -1,19 +1,21 @@
 <script lang="ts">
 export default {
-  name: 'App',
-}
+  name: "App",
+};
 </script>
 
 <template>
   <div class="container">
     <div>
       <Hi />
-      <p> Welcome to here 🚀 . </p>
+      <p>Welcome to here 🚀 .</p>
       <!--  -->
       <!--  -->
       <!--  -->
       <p>Vite so awesome 🔥 .</p>
-      <a href="https://github.com/webfansplz/vite-plugin-vue-inspector">Give me a star if it helps you 💗 .</a>
+      <a href="https://github.com/DBSDs/vite-plugin-vue-inspector"
+        >Give me a star if it helps you 💗 .</a
+      >
     </div>
   </div>
 </template>

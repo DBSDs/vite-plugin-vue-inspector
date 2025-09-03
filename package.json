@@ -1,14 +1,14 @@
 {
   "private": true,
-  "author": "webfansplz",
+  "author": "DBSDs",
   "license": "MIT",
-  "homepage": "https://github.com/webfansplz/vite-plugin-vue-inspector#readme",
+  "homepage": "https://github.com/DBSDs/vite-plugin-vue-inspector#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webfansplz/vite-plugin-vue-inspector.git"
+    "url": "git+https://github.com/DBSDs/vite-plugin-vue-inspector.git"
   },
   "bugs": {
-    "url": "https://github.com/webfansplz/vite-plugin-vue-inspector/issues"
+    "url": "https://github.com/DBSDs/vite-plugin-vue-inspector/issues"
   },
   "scripts": {
     "play:nuxt": "pnpm run -r --filter=./packages/playground/nuxt dev",
@@ -41,6 +41,9 @@
           "vue": "^2.6.14"
         }
       }
-    }
+    },
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

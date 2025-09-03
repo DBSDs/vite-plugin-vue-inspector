@@ -1,16 +1,16 @@
 {
-  "name": "vite-plugin-vue-inspector",
-  "version": "5.3.2",
+  "name": "@op_chen/vite-plugin-vue-inspector",
+  "version": "6.0.0",
   "description": "jump to local IDE source code while click the element of browser automatically.",
-  "author": "webfansplz",
+  "author": "DBSDs",
   "license": "MIT",
-  "homepage": "https://github.com/webfansplz/vite-plugin-vue-inspector#readme",
+  "homepage": "https://github.com/DBSDs/vite-plugin-vue-inspector#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webfansplz/vite-plugin-vue-inspector.git"
+    "url": "git+https://github.com/DBSDs/vite-plugin-vue-inspector.git"
   },
   "bugs": {
-    "url": "https://github.com/webfansplz/vite-plugin-vue-inspector/issues"
+    "url": "https://github.com/DBSDs/vite-plugin-vue-inspector/issues"
   },
   "keywords": [
     "vue",

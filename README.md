@@ -1,12 +1,11 @@
-
 <p align="center">
-<a href="https://github.com/webfansplz/vite-plugin-vue-inspector"><img src="./logo.svg" width="180" alt="vite-plugin-vue-inspector"></a>
+<a href="https://github.com/DBSDs/vite-plugin-vue-inspector"><img src="./logo.svg" width="180" alt="vite-plugin-vue-inspector"></a>
 </p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/vite-plugin-vue-inspector" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/npm/v/vite-plugin-vue-inspector" alt="NPM Version" /></a>
   <a href="https://www.npmjs.com/package/vite-plugin-vue-inspector" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/npm/dt/vite-plugin-vue-inspector" alt="NPM Downloads" /></a>
-  <a href="https://github.com/webfansplz/vite-plugin-vue-inspector/blob/master/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/github/license/webfansplz/vite-plugin-vue-inspector" alt="License" /></a>
+  <a href="https://github.com/DBSDs/vite-plugin-vue-inspector/blob/master/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/github/license/DBSDs/vite-plugin-vue-inspector" alt="License" /></a>
 </p>
 
 <p align="center">
@@ -25,7 +24,7 @@ A vite plugin which provides the ability that to jump to the local IDE when you 
 
 ```bash
 
-# vite-plugin-vue-inspector 
+# vite-plugin-vue-inspector
 
 pnpm install vite-plugin-vue-inspector -D
 
@@ -42,52 +41,54 @@ pnpm install unplugin-vue-inspector -D
 ```ts
 // for Vue2
 
-import { defineConfig, } from 'vite'
-import { createVuePlugin, } from 'vite-plugin-vue2'
+import { defineConfig } from "vite";
+import { createVuePlugin } from "vite-plugin-vue2";
 
-import Inspector from 'unplugin-vue-inspector/vite' // OR vite-plugin-vue-inspector
+import Inspector from "unplugin-vue-inspector/vite"; // OR vite-plugin-vue-inspector
 
 export default defineConfig({
   plugins: [
     createVuePlugin(),
     Inspector({
-      vue: 2
+      vue: 2,
     }),
   ],
-})
+});
 ```
 
 ```ts
 // for Vue3
 
-import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import Vue from "@vitejs/plugin-vue";
 
-import Inspector from 'unplugin-vue-inspector/vite' // OR vite-plugin-vue-inspector
+import Inspector from "unplugin-vue-inspector/vite"; // OR vite-plugin-vue-inspector
 
 export default defineConfig({
   plugins: [Vue(), Inspector()],
-})
+});
 ```
 
 ```ts
 // for Nuxt3
 // nuxt.config.ts
-import { defineNuxtConfig } from 'nuxt/config'
-import Inspector from 'vite-plugin-vue-inspector'
+import { defineNuxtConfig } from "nuxt/config";
+import Inspector from "vite-plugin-vue-inspector";
 
 export default defineNuxtConfig({
   modules: [
-    ['unplugin-vue-inspector/nuxt', {
-      enabled: true,
-      toggleButtonVisibility: 'always',
-    }],
+    [
+      "unplugin-vue-inspector/nuxt",
+      {
+        enabled: true,
+        toggleButtonVisibility: "always",
+      },
+    ],
   ],
-})
+});
 ```
 
 ### Options
-
 
 ```ts
 interface VitePluginInspectorOptions {
@@ -95,13 +96,13 @@ interface VitePluginInspectorOptions {
    * Vue version
    * @default 3
    */
-  vue?: 2 | 3
+  vue?: 2 | 3;
 
   /**
    * Default enable state
    * @default false
    */
-  enabled?: boolean
+  enabled?: boolean;
 
   /**
    * Define a combo key to toggle inspector
@@ -113,19 +114,19 @@ interface VitePluginInspectorOptions {
    * To avoid conflicts or accidentally typing into inputs, modifier only combinations are recommended.
    * You can also disable it by setting `false`.
    */
-  toggleComboKey?: string | false
+  toggleComboKey?: string | false;
 
   /**
    * Toggle button visibility
    * @default 'active'
    */
-  toggleButtonVisibility?: 'always' | 'active' | 'never'
+  toggleButtonVisibility?: "always" | "active" | "never";
 
   /**
    * Toggle button display position
    * @default top-right
    */
-  toggleButtonPos?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'
+  toggleButtonPos?: "top-right" | "top-left" | "bottom-right" | "bottom-left";
 
   /**
    * append an import to the module id ending with `appendTo` instead of adding a script into body
@@ -133,26 +134,26 @@ interface VitePluginInspectorOptions {
    *
    * WARNING: only set this if you know exactly what it does.
    */
-  appendTo?: string | RegExp
+  appendTo?: string | RegExp;
 
   /**
    * Customize openInEditor host (e.g. http://localhost:3000)
    * @default false
    * @deprecated This option is deprecated and removed in 5.0. The plugin now automatically detects the correct host.
    */
-  openInEditorHost?: string | false
+  openInEditorHost?: string | false;
 
   /**
    * lazy load inspector times (ms)
    * @default false
    */
-  lazyLoad?: number | false
+  lazyLoad?: number | false;
 
   /**
    * disable inspector on editor open
    * @default false
    */
-  disableInspectorOnEditorOpen?: boolean
+  disableInspectorOnEditorOpen?: boolean;
 
   /**
    * Hide information in VNode and produce clean html in DevTools
@@ -161,48 +162,73 @@ interface VitePluginInspectorOptions {
    *
    * @default true
    */
-  cleanHtml?: boolean
+  cleanHtml?: boolean;
 
   /**
    * Target editor when open in editor (v5.1.0+)
    *
    * @default code (Visual Studio Code)
    */
-  launchEditor?: 'appcode' | 'atom' | 'atom-beta' | 'brackets' | 'clion' | 'code' | 'code-insiders' | 'codium' | 'emacs' | 'idea' | 'notepad++' | 'pycharm' | 'phpstorm' | 'rubymine' | 'sublime' | 'vim' | 'visualstudio' | 'webstorm' | 'cursor'
+  launchEditor?:
+    | "appcode"
+    | "atom"
+    | "atom-beta"
+    | "brackets"
+    | "clion"
+    | "code"
+    | "code-insiders"
+    | "codium"
+    | "emacs"
+    | "idea"
+    | "notepad++"
+    | "pycharm"
+    | "phpstorm"
+    | "rubymine"
+    | "sublime"
+    | "vim"
+    | "visualstudio"
+    | "webstorm"
+    | "cursor";
+
+  /**
+   * Disable output line and column
+   * @default false
+   */
+  disabledLineAndColumn?: boolean;
 }
 ```
 
 ### Example
 
-- [Vue2](https://github.com/webfansplz/vite-plugin-vue-inspector/tree/main/packages/playground/vue2)
-- [Vue3](https://github.com/webfansplz/vite-plugin-vue-inspector/tree/main/packages/playground/vue3)
-- [Nuxt3](https://github.com/webfansplz/vite-plugin-vue-inspector/tree/main/packages/playground/nuxt)
+- [Vue2](https://github.com/DBSDs/vite-plugin-vue-inspector/tree/main/packages/playground/vue2)
+- [Vue3](https://github.com/DBSDs/vite-plugin-vue-inspector/tree/main/packages/playground/vue3)
+- [Nuxt3](https://github.com/DBSDs/vite-plugin-vue-inspector/tree/main/packages/playground/nuxt)
 
 ## Supported editors
 
-| Value | Editor | Linux | Windows | OSX |
-|--------|------|:------:|:------:|:------:|
-| `appcode` | [AppCode](https://www.jetbrains.com/objc/) |  |  |✓|
-| `atom` | [Atom](https://atom.io/) |✓|✓|✓|
-| `atom-beta` | [Atom Beta](https://atom.io/beta) |  |  |✓|
-| `brackets` | [Brackets](http://brackets.io/) |✓|✓|✓|
-| `clion` | [Clion](https://www.jetbrains.com/clion/) |  |✓|✓|
-| `code` | [Visual Studio Code](https://code.visualstudio.com/) |✓|✓|✓|
-| `code-insiders` | [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/) |✓|✓|✓|
-| `codium` | [VSCodium](https://github.com/VSCodium/vscodium) |✓|✓|✓|
-| `emacs` | [Emacs](https://www.gnu.org/software/emacs/) |✓| | |
-| `idea` | [IDEA](https://www.jetbrains.com/idea/) |✓|✓|✓|
-| `notepad++` | [Notepad++](https://notepad-plus-plus.org/download/v7.5.4.html) | |✓| |
-| `pycharm` | [PyCharm](https://www.jetbrains.com/pycharm/) |✓|✓|✓|
-| `phpstorm` | [PhpStorm](https://www.jetbrains.com/phpstorm/) |✓|✓|✓|
-| `rubymine` | [RubyMine](https://www.jetbrains.com/ruby/) |✓|✓|✓|
-| `sublime` | [Sublime Text](https://www.sublimetext.com/) |✓|✓|✓|
-| `vim` | [Vim](http://www.vim.org/) |✓| | |
-| `visualstudio` | [Visual Studio](https://www.visualstudio.com/vs/) | | |✓|
-| `webstorm` | [WebStorm](https://www.jetbrains.com/webstorm/) |✓|✓|✓|
-| `cursor` | [Cursor](https://www.cursor.com/) |✓|✓|✓|
+| Value           | Editor                                                                 | Linux | Windows | OSX |
+| --------------- | ---------------------------------------------------------------------- | :---: | :-----: | :-: |
+| `appcode`       | [AppCode](https://www.jetbrains.com/objc/)                             |       |         |  ✓  |
+| `atom`          | [Atom](https://atom.io/)                                               |   ✓   |    ✓    |  ✓  |
+| `atom-beta`     | [Atom Beta](https://atom.io/beta)                                      |       |         |  ✓  |
+| `brackets`      | [Brackets](http://brackets.io/)                                        |   ✓   |    ✓    |  ✓  |
+| `clion`         | [Clion](https://www.jetbrains.com/clion/)                              |       |    ✓    |  ✓  |
+| `code`          | [Visual Studio Code](https://code.visualstudio.com/)                   |   ✓   |    ✓    |  ✓  |
+| `code-insiders` | [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/) |   ✓   |    ✓    |  ✓  |
+| `codium`        | [VSCodium](https://github.com/VSCodium/vscodium)                       |   ✓   |    ✓    |  ✓  |
+| `emacs`         | [Emacs](https://www.gnu.org/software/emacs/)                           |   ✓   |         |     |
+| `idea`          | [IDEA](https://www.jetbrains.com/idea/)                                |   ✓   |    ✓    |  ✓  |
+| `notepad++`     | [Notepad++](https://notepad-plus-plus.org/download/v7.5.4.html)        |       |    ✓    |     |
+| `pycharm`       | [PyCharm](https://www.jetbrains.com/pycharm/)                          |   ✓   |    ✓    |  ✓  |
+| `phpstorm`      | [PhpStorm](https://www.jetbrains.com/phpstorm/)                        |   ✓   |    ✓    |  ✓  |
+| `rubymine`      | [RubyMine](https://www.jetbrains.com/ruby/)                            |   ✓   |    ✓    |  ✓  |
+| `sublime`       | [Sublime Text](https://www.sublimetext.com/)                           |   ✓   |    ✓    |  ✓  |
+| `vim`           | [Vim](http://www.vim.org/)                                             |   ✓   |         |     |
+| `visualstudio`  | [Visual Studio](https://www.visualstudio.com/vs/)                      |       |         |  ✓  |
+| `webstorm`      | [WebStorm](https://www.jetbrains.com/webstorm/)                        |   ✓   |    ✓    |  ✓  |
+| `cursor`        | [Cursor](https://www.cursor.com/)                                      |   ✓   |    ✓    |  ✓  |
 
-## 🔌  Configuration IDE / Editor
+## 🔌 Configuration IDE / Editor
 
 **Starting from v5.1.0, We recommend using the `launchEditor` option configuration to specify the IDE** (Please ensure that the editor's environment variables are correctly configured beforehand.)
 
@@ -210,20 +236,18 @@ It uses an **environment variable** named **`LAUNCH_EDITOR`** to specify an IDE 
 
 For example, if you want it always open VS Code when inspection clicked, set `export LAUNCH_EDITOR=code` in your shell.
 
-
 ### VS Code
 
 - install VS Code command line tools, [see the official docs](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
   ![install-vscode-cli](./public/install-vscode-cli.png)
 
-- set env to shell, like `.bashrc` or `.zshrc`  
+- set env to shell, like `.bashrc` or `.zshrc`
 
   ```bash
   export LAUNCH_EDITOR=code
   ```
 
 <br />
-
 
 ### VS Code with WSL (Windows)
 
@@ -241,10 +265,9 @@ For example, if you want it always open VS Code when inspection clicked, set `ex
 }
 ```
 
+### WebStorm
 
-### WebStorm  
-
-- just set env with an absolute path to shell, like `.bashrc` or `.zshrc` (only MacOS)  
+- just set env with an absolute path to shell, like `.bashrc` or `.zshrc` (only MacOS)
 
   ```bash
   export LAUNCH_EDITOR='/Applications/WebStorm.app/Contents/MacOS/webstorm'
@@ -254,7 +277,7 @@ For example, if you want it always open VS Code when inspection clicked, set `ex
 
 - install WebStorm command line tools
 
-- then set env to shell, like `.bashrc` or `.zshrc`  
+- then set env to shell, like `.bashrc` or `.zshrc`
 
   ```bash
   export LAUNCH_EDITOR=webstorm
@@ -303,15 +326,15 @@ export LAUNCH_EDITOR=vim
 You can also use control inspector programmatically, by accessing the `__VUE_INSPECTOR__` global variable.
 
 ```ts
-import type { VueInspectorClient } from 'vite-plugin-vue-inspector'
+import type { VueInspectorClient } from "vite-plugin-vue-inspector";
 
-const inspector: VueInspectorClient = window.__VUE_INSPECTOR__
+const inspector: VueInspectorClient = window.__VUE_INSPECTOR__;
 
 if (inspector) {
   // enable inspector
-  inspector.enable()
+  inspector.enable();
   // or
-  inspector.disable()
+  inspector.disable();
 }
 ```
 
@@ -323,7 +346,8 @@ Partially implementation is inspired by [vite-plugin-svelte-inspector](https://g
 
 ## 🤖️ Analysis of Theory
 
-[Chinese] [点击页面元素,这个Vite插件帮我打开了Vue组件](https://juejin.cn/post/7077347158545924127)
+[Chinese] [点击页面元素,这个 Vite 插件帮我打开了 Vue 组件](https://juejin.cn/post/7077347158545924127)
+
 ## 📄 License
 
 [MIT LICENSE](./LICENSE)
