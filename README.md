@@ -26,12 +26,7 @@ A vite plugin which provides the ability that to jump to the local IDE when you 
 
 # vite-plugin-vue-inspector
 
-pnpm install vite-plugin-vue-inspector -D
-
-# unplugin-vue-inspector
-
-pnpm install unplugin-vue-inspector -D
-
+pnpm install @op_chen/vite-plugin-vue-inspector -D
 ```
 
 ## 🦄 Usage
@@ -44,8 +39,7 @@ pnpm install unplugin-vue-inspector -D
 import { defineConfig } from "vite";
 import { createVuePlugin } from "vite-plugin-vue2";
 
-import Inspector from "unplugin-vue-inspector/vite"; // OR vite-plugin-vue-inspector
-
+import Inspector from "@op_chen/vite-plugin-vue-inspector";
 export default defineConfig({
   plugins: [
     createVuePlugin(),
@@ -62,7 +56,7 @@ export default defineConfig({
 import { defineConfig } from "vite";
 import Vue from "@vitejs/plugin-vue";
 
-import Inspector from "unplugin-vue-inspector/vite"; // OR vite-plugin-vue-inspector
+import Inspector from "@op_chen/vite-plugin-vue-inspector";
 
 export default defineConfig({
   plugins: [Vue(), Inspector()],
@@ -73,7 +67,7 @@ export default defineConfig({
 // for Nuxt3
 // nuxt.config.ts
 import { defineNuxtConfig } from "nuxt/config";
-import Inspector from "vite-plugin-vue-inspector";
+import Inspector from "@op_chen/vite-plugin-vue-inspector";
 
 export default defineNuxtConfig({
   modules: [
